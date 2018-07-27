@@ -18,8 +18,23 @@ class MicropostsController < ApplicationController
         flash[:success] = "Micropost deleted"
         # redirect_to request.referrer || root_url
         redirect_back(fallback_location: root_url)    #Rails 5からこれでもOK
-      end
+    end
   
+    def show
+      render 'edit'
+      # @micropost = Micropost.find_by(id: params[:id])
+    end
+
+    def update
+      @micropost = Micropost.find(params[:id])
+      if @micropost.update_attributes(micropost_params)
+        flash[:success] = "Micropost updated"
+        render 'edit'
+      else
+        render 'edit'
+      end
+    end
+    
     private
       def micropost_params
         params.require(:micropost).permit(:content, :picture)

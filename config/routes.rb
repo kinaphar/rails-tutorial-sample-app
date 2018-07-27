@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users    # こう書くとRESTfulになる
-  resources :microposts,          only: [:create, :destroy]    # 13章
+  resources :microposts,          only: [:create, :destroy, :show, :update]    # 13章
 end
