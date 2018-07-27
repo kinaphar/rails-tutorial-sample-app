@@ -19,7 +19,8 @@ gem 'jbuilder',     '2.7.0'
 gem 'bootsnap',     '1.2.0'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.13'
+  # gem 'sqlite3', '1.3.13'
+  gem 'mysql2'
   gem 'byebug',  '9.0.6', platform: :mri
 end
 
