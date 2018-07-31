@@ -9,5 +9,12 @@
       <a href="http://gravatar.com/emails" target="_blank">Change Image</a>
       <br><br>
     </div>
+    <div class="unsubscribe">
+    <hr>
+    <% if current_user?(@user) %>
+      <%= link_to "Unsubscribe (delete your account)", @user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+    <% end %>
+    </div>
   </div>
 </div>
