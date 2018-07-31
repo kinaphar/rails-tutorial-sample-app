@@ -45,6 +45,7 @@ class User < ApplicationRecord
       # 試作feedの定義   ※13章
   # 完全な実装は次章の「ユーザーをフォローする」を参照
   def feed
-    Micropost.where("user_id = ?", id)
+    Micropost
+    # .where("user_id = ?", id)
   end
 end
